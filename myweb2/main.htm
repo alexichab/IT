@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>V@MP1RE</title>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic|Playfair+Display:400,700&subset=latin,cyrillic">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/css.css">
+  <link rel="icon" href="gotic.ico">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+<script>
+ 	var bool = 1;
+	var products = 0;
+	var price = 0;
+    function changeBool() {
+        bool *= -1;
+    }
+	function showCart() {
+        if (bool > 0) {
+            document.getElementById("cart").style.visibility = "visible";
+			changeBool();
+        } else if (bool < 0) {
+			document.getElementById("cart").style.visibility = "hidden";
+			changeBool();
+		}
+    }
+	function addToCart(p) {
+		price = price + p;
+		products = products + 1;
+		updateCart(products, price);
+	}
+	function updateCart(q, p) {
+		document.getElementById("q").textContent = q;
+		document.getElementById("price").textContent = p;
+	}
+	function clearCart() {
+		price = 0;
+		products = 0;
+		updateCart(0, 0);
+	}
+	function changeBG(i) {
+		document.getElementById("id" + i.toString()).style.backgroundColor = "black";
+		document.getElementById("id" + i.toString()).style.color = "red";
+	}
+	function change(i) {
+		document.getElementById("id" + i.toString()).style.backgroundColor = "white";
+		document.getElementById("id" + i.toString()).style.color = "black";
+	}
+</script>
+</head>
+<body>
+
+<header>
+    <nav class="container">
+	<a href="main.htm" class="logo"><img src="images/logo.png"></a>
+      <a class="logo" href="main.htm">
+        <span>V@MP1RE</span>
+      </a>
+	  
+      <div class="nav-toggle"><span></span></div>
+	  
+      <form action="" method="get" id="searchform">
+        <input type="text" placeholder="Искать на сайте...">
+        <button type="submit"><i class="fa fa-search"></i></button>
+		
+      </form>
+      <ul id="menu">
+        <li><a  id="id1" href="shop.htm" onmouseover='changeBG(1)' onmouseleave='change(1)'>МАГАЗИН</a></li>
+        <li><a id="id2" href="question.htm" onmouseover='changeBG(2)' onmouseleave='change(2)'>ВОПРОСЫ</a></li>
+        <li><a id="id3" href="contact.htm" onmouseover='changeBG(3)' onmouseleave='change(3)'>КОНТАКТЫ</a></li>
+		<li><a id="id4" onclick='showCart();' onmouseover='changeBG(4)' onmouseleave='change(4)'>Корзина</a></li>
+      </ul>
+	
+    </nav>
+  </header>
+  <div class="container">
+  <div class="posts-list">
+    <article id="post-1" class="post">
+      <div class="post-image">
+	  <a href="hoodieAA.htm"><img src="images/hoodieAA.jpg" class="scale"></a>
+	  <a href="longleeveThots.htm"><img src="images/longleeveKnots.jpg" class="scale"></a>
+	  <a href="hoodieMemories.htm"><img src="images/hoodieMemories.jpg" class="scale"></a>
+	  <a href="hoodieDisorder.htm"><img src="images/hoodieDisorder.jpg" class="scale"></a>
+	  </div>
+	  
+	  <table class="post-text">
+	  <tr>
+	  <td class="ripndip"><a href="">AA (o-x2)versized-hoodie</a></td>
+	  <td class="dime"><a href="">"Knots" Longleeve</a></td>
+	  </tr>
+	  </table>
+	  
+	  <table class="post-text2">
+	  <tr>
+	  <td class="wip"><a href="">ТОЛСТОВКА hoodieMemories</a></td>
+	  <td class="nike"><a href="">ТОЛСТОВКА Disorder</a></td>
+	  </tr>
+	  </table>
+	  
+	  <table class="post-price">
+	  <tr>
+	  <td class="ripndip"><a href="">12 900 ₽</a><br><button class="buttonToBuy" onclick='addToCart(12900);'>Купить</button></td>
+	  <td class="dime"><a href="">7 990 ₽</a><br><button class="buttonToBuy" onclick='addToCart(7990);'>Купить</button></td>
+	  </tr>
+	  </table>
+	  
+	  <table class="post-price2">
+	  <tr>
+	  <td class="ripndip"><a href="">8 500 ₽</a><br><button class="buttonToBuy" onclick='addToCart(8500);'>Купить</button></td>
+	  <td class="dime"><a href="">12 000 ₽</a><br><button class="buttonToBuy" onclick='addToCart(12000);'>Купить</button></td>
+	  </tr>
+	  </table>
+	  
+	  <div class="post-image2">
+	  <img src="images/SHOP.jpg" class="scale-dime">
+	  </div>
+	  
+	  <div class="post-image3">
+	  <img src="images/LOGO2.jpg" class="scale-x">
+	  </div>
+	  
+	  <div class="post-image4">
+	  <a href="shop.htm"><img src="images/post3.jpg" class="scale-dime"></a>
+	  </div>
+	  
+	  <table class="collab">
+	  <tr>
+	  <td class="col">Коллаборация двух уникальных брендов. <br>Совместная работа STENO515 x Богема Ленинград <br> Новые неповторимые дизайны российских брендов.</td>
+	  </tr>
+	  </table>
+	  
+	  <table class="post-use">
+	  <tr>
+	  <td class="use">ПОПУЛЯРНЫЕ ТОВАРЫ</td>
+	  </tr>
+	  </table>
+	  
+	  <div class="post-image5">
+	  <a href="hoodieDisorder.htm"><img src="images/hoodieDisorder1.jpg" class="scale"></a>
+	  <a href="bringemTee.htm"><img src="images/bringemTee.jpg" class="scale"></a>
+	  <a href="ranger1.htm"><img src="images/ranger1.jpg" class="scale"></a>
+	  <a href="cargoPants.htm"><img src="images/cargoPants.jpg" class="scale"></a>
+	  </div>
+	  
+	  <table class="post-use2">
+	  <tr>
+	  <td class="nike"><a href="">ТОЛСТОВКА Disorder</a></td>
+	  <td class="dime"><a href="">ФУТБОЛКА Bring `em</a></td>
+	  </tr>
+	  </table>
+	  
+	  <table class="post-use3">
+	  <tr>
+	  <td class="adidas"><a href="">Ботинки RANGER</a></td>
+	  <td class="nike-p"><a href="">БРЮКИ 01`CARGO</a></td>
+	  </tr>
+	  </table>
+	  
+	  <table class="price-use">
+	  <tr>
+	  <td class="nike-s"><a href="">12 000 ₽</a><br><button class="buttonToBuy" onclick='addToCart(12000);'>Купить</button></td>
+	  <td class="dime-t"><a href="">4 200 ₽</a><br><button class="buttonToBuy" onclick='addToCart(4200);'>Купить</button></td>
+	  </tr>
+	  </table>
+	  
+	  <table class="price-use2">
+	  <tr>
+	  <td class="adidas-s"><a href="">8 200 ₽</a><br><button class="buttonToBuy" onclick='addToCart(8200);'>Купить</button></td>
+	  <td class="nike-p"><a href="">6 000 ₽</a><br><button class="buttonToBuy" onclick='addToCart(6000);'>Купить</button></td>
+	  </tr>
+	  </table>
+	  
+	  <div class="post-image6">
+	  <img src="line.png">
+	  </div>
+	  
+	  <table class="post-about">
+	  <tr>
+	  <td class="about">О МАГАЗИНЕ</td>
+	  </tr>
+	  </table>
+	  
+	  <table class="post-about2">
+	  <tr>
+	  <td class="about2">Наш магазин является сборником дизайнерской одежды со всего СНГ комьюнити. В каталоге так же есть, вполне обычные бренды.</td>
+	  </tr>
+	  </table>
+	  <a href="main.htm" class="logo1"><img class="small-rotate" src="images/logo.png"></a>
+	  <div class="post-image7">
+	  <img src="pay.jpg">
+	  </div>
+	  
+	  <table class="post-store">
+	  <tr>
+	  <td class="store"><a href="main.htm">©V@MP1RE</a></td>
+	  </tr>
+	  </table>
+	  
+	  <div class="post-image01">
+	  <a href=""><img src="" class="scale"></a>
+	  </div>
+      <div class="post-content">
+      <div class="category"><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">#МЫЗАПУТИНА</a></div>
+		
+    </div>
+    </div>
+    </div>
+    </article>
+    </article>
+  </div>
+
+	<div id="cart">
+		<p>Всего товаров:  <span id="q">0</span></p>
+		<br>
+		<p>Стоимость:  <span id="price">0</span> ₽</p>
+		<br>
+		<button onclick='alert("ЗАКАЗ ОТПРАВЛЕН");'>Заказать</button>
+		<button onclick='clearCart();'>Очистить корзину</button>
+	  </div>
+</body>
+</html>
+

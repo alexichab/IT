@@ -1,0 +1,30 @@
+.first {
+    color: rgb(6, 9, 99);
+}
+
+.second {
+    color: #0044ff;
+    margin-top: -1.9em;
+    margin-right: 0.1em;
+}
+
+.history {
+    background-color: lightgrey;
+}
+
+.history p {
+    background-color: white;
+    border-width: 4px;
+    border-left: solid red;
+    padding-left: 10pt;
+    margin: 2em;
+}
+
+.history b {
+    letter-spacing: 0.3em;
+}
+
+.history h1 {
+    font-family: arial;
+    font-size: big;
+}
